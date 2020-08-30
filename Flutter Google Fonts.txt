@@ -1,0 +1,26 @@
+google_fonts: ^1.0.0
+
+
+To import GoogleFonts:
+
+import 'package:google_fonts/google_fonts.dart';
+To use GoogleFonts with the default TextStyle:
+
+Text(
+  'This is Google Fonts',
+  style: GoogleFonts.lato(),
+),
+Or, if you want to load the font dynamically:
+
+Text(
+  'This is Google Fonts',
+  style: GoogleFonts.getFont('Lato'),
+),
+To use GoogleFonts with an existing TextStyle:
+
+Text(
+  'This is Google Fonts',
+  style: GoogleFonts.lato(
+    textStyle: TextStyle(color: Colors.blue, letterSpacing: .5),
+  ),
+),

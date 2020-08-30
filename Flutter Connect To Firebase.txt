@@ -1,0 +1,24 @@
+Flutter Connect To Firebase
+
+1 - New Project in android studio 
+2 - Make Project in firebase 
+3 - Fix gradle issue
+4 - Get SHA-1 key
+5 - Place Config file in -- android-> app-> Here
+6 - Add these in pubspec.yaml file --- 
+	
+firebase_auth: ^0.16.0
+google_sign_in: ^4.4.2
+cloud_firestore: ^0.13.4+2
+
+
+Run in terminal --- flutter pub get 
+
+Add gms and all lines in android -> app -> gradle and android-> gradle
+
+
+Add this line in default config -- app\gradle
+       
+	   multiDexEnabled true
+	   minSdk - 21
+

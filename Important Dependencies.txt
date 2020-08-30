@@ -1,0 +1,47 @@
+For Android / Ios -> 
+
+  firebase_auth: 
+  google_sign_in: 
+  cloud_firestore: 
+  flare_flutter: 
+  flare_splash_screen: 
+  flutter_device_type: 
+  firebase_core: 
+  url_launcher: 
+  titled_navigation_bar: 
+  flutter_launcher_icons: 
+  firebase_dynamic_links:
+  animated_text_kit:
+  flutter_icons:
+  share:
+  rate_my_app:  
+  outline_material_icons
+  flutter_colorpicker: 
+  flutter_slidable:  
+  launch_review:  
+
+For Web Apps ->
+
+	responsive_builder: ^0.1.2
+	get_it:
+	outline_material_icons:
+	flare_flutter: 
+	flare_splash_screen: 
+    url_launcher: 
+	titled_navigation_bar:
+	animated_text_kit: 
+	flutter_icons:
+
+Fo Both ->
+
+	responsive_builder: ^0.1.2
+	get_it:
+	outline_material_icons:
+	flare_flutter: 
+	flare_splash_screen: 
+    url_launcher: 
+	titled_navigation_bar:
+	animated_text_kit: 
+	flutter_icons:
+  
+

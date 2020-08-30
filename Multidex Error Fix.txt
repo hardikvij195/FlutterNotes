@@ -1,0 +1,11 @@
+		
+	app\build.gradle	
+		
+	default config{
+	
+		
+		minSdkVersion 21
+        targetSdkVersion 29
+        multiDexEnabled true
+		
+		}
