@@ -1,0 +1,26 @@
+Flutter Terminal Commands ----
+
+flutter upgrade
+flutter upgrade --force
+
+flutter clean 
+flutter pub get 
+flutter run
+flutter channel
+
+To switch channels, run flutter channel [<channel-name>], and then run flutter upgrade to ensure you're on the latest.
+
+Web 
+
+flutter channel beta
+flutter upgrade
+flutter config --enable-web
+flutter config --no-enable-web
+
+Desktop - must be on master flutter build release channel
+
+flutter channel master
+flutter upgrade
+
+flutter config --enable-windows-desktop
+flutter config --enable-macos-desktop

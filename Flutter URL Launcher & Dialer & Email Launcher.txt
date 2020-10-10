@@ -1,0 +1,54 @@
+  url_launcher: 
+
+
+
+ void _launch(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      _showSnackBar();
+    }
+  }
+  
+  
+  Email -- 
+  
+  
+  void _launchEmail(String Email) async {
+  
+	var url = 'mailto:$Email?subject= Hello World';
+  
+	if(await canLaunch(url)){
+
+		await launch(url);
+	
+	}else {
+
+		throw 'Could not launch'
+
+	}
+  }
+  
+  
+
+  
+  Caller ----
+  
+  void _launchCaller(int num) async {
+  
+  var url = 'tel:${num.toString()}';
+  if(await canLaunch(url)){
+  
+	await launch(url);
+	
+  }else {
+	throw 'Could not launch'
+  }
+  }
+  
+  
+  To Launch -----------
+  
+  
+  _launchCaller(8588099741);
+  

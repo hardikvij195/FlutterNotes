@@ -1,0 +1,9 @@
+-> Command 
+
+-> flutter channel beta , flutter channel stable 
+-> flutter upgrde 
+-> flutter doctor 
+
+
+run in cmd not in vscode terminal 
+

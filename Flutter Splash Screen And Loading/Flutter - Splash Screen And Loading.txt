@@ -1,0 +1,87 @@
+Flutter - Splash Screen And Loading
+
+
+  flare_flutter: ^1.0.1
+  flare_splash_screen: ^2.0.1+2
+  flutter_device_type: ^0.2.0
+  
+  
+  
+    assets:
+   - assets/
+
+main.dart ---
+
+import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
+import 'package:splash_hv_and_loading/main_page.dart';
+import 'package:splash_hv_and_loading/splash.dart';
+
+void main() {
+  runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(
+      primaryColor: Colors.black,
+    ),
+    home: Device.get().isAndroid || Device.get().isIos == true ?  Splash() : Web() ,    
+  ));
+}
+
+
+splash.dart ---
+
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flare_splash_screen/flare_splash_screen.dart';
+import 'package:splash_hv_and_loading/main_page.dart';
+
+class Splash extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen.navigate(
+      name: "assets/Splash_Screen_Hv.flr",
+      next: MyApp(),
+      alignment: Alignment.center,
+      until: () => Future.delayed(Duration(seconds: 2 , milliseconds: 30)),
+      backgroundColor: Colors.black,
+      startAnimation: "Splash",
+    );
+  }
+}
+
+
+
+main_page.dart ---
+
+
+import 'package:flutter/material.dart';
+import 'package:flare_flutter/flare_actor.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,      
+      body: Center(        
+        child: FlareActor("assets/Loading_Small_Hv.flr",
+        animation: "loading")
+      )
+    );
+  }
+}
+
+
+class Web extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      
+
+    );
+  }
+}
+
+
+
+

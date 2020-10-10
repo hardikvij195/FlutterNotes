@@ -1,0 +1,113 @@
+Flutter - Google Sign In 
+
+
+firebase_auth: ^0.16.0
+google_sign_in: ^4.4.2
+
+
+Files -- 1 main.dart 
+		 2 firebase_auth.dart 
+		 3 ui - home.dart , login.dart , splash.dart 
+
+	
+main.dart ---
+	
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_fire_auth/ui/home.dart';
+import 'package:flutter_fire_auth/ui/login.dart';
+import 'package:flutter_fire_auth/ui/splash.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MainScreen(),
+    );
+  }
+}
+
+
+class MainScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.onAuthStateChanged,
+      builder: (context,AsyncSnapshot<FirebaseUser> snapshot) {
+        if(snapshot.connectionState == ConnectionState.waiting)
+          return SplashPage();
+        if(!snapshot.hasData || snapshot.data == null)
+          return LoginPage();
+        return HomePage();
+      },
+    );
+  }
+}
+
+
+
+
+
+firebase_auth.dart 
+
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+class AuthProvider {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  Future<bool> signInWithEmail(String email, String password) async{
+    try {
+      AuthResult result = await _auth.signInWithEmailAndPassword(email: email,password: password);
+      FirebaseUser user = result.user;
+      if(user != null)
+      return true;
+      else
+      return false;
+    } catch (e) {
+      print(e.message);
+      return false;
+    }
+  }
+
+  Future<void> logOut() async {
+    try {
+      await _auth.signOut();
+    } catch (e) {
+      print("error logging out");
+    }
+  }
+
+  Future<bool> loginWithGoogle() async {
+    try {
+      GoogleSignIn googleSignIn = GoogleSignIn();
+      GoogleSignInAccount account = await googleSignIn.signIn();
+      if(account == null )
+        return false;
+      AuthResult res = await _auth.signInWithCredential(GoogleAuthProvider.getCredential(
+        idToken: (await account.authentication).idToken,
+        accessToken: (await account.authentication).accessToken,
+      ));
+      if(res.user == null)
+        return false;
+      return true;
+    } catch (e) {
+      print(e.message);
+      print("Error logging with google");
+      return false;
+    }
+  }
+}
+	
+	
+	
+	

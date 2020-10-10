@@ -1,0 +1,65 @@
+Dependency --- 
+
+  flutter_colorpicker: ^0.3.4
+
+import 'package:flutter/material.dart';
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+
+void main() {
+  runApp(MaterialApp(home: MyApp()));
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color currentColor = Colors.limeAccent;
+  Color pickerColor = Color(0xff443a49);
+
+  void changeColor(Color color) => setState(() => pickerColor = color);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: currentColor,
+      ),
+      body: Center(
+        child: RaisedButton(
+          elevation: 3.0,
+          onPressed: () {
+            // raise the [showDialog] widget
+            showDialog(
+              context: context,
+              child: AlertDialog(
+                title: const Text('Pick a color!'),
+                content: SingleChildScrollView(
+                  child: ColorPicker(
+                    pickerColor: pickerColor,
+                    onColorChanged: changeColor,
+                    showLabel: true,
+                    pickerAreaHeightPercent: 0.8,
+                  ),
+                ),
+                actions: <Widget>[
+                  FlatButton(
+                    child: const Text('Got it'),
+                    onPressed: () {
+                      setState(() => currentColor = pickerColor);
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
+            );
+          },
+          child: const Text('Change me'),
+          color: currentColor,
+          textColor: Color(0xffffffff),
+        ),
+      ),
+    );
+  }
+}
