@@ -1,0 +1,10 @@
+Flutter Generate Signed Apk
+
+pass - simplistqpro1 
+
+1 - run command in terminal 
+2 - enter pass 
+3 - create key.properties in android/key.properties 
+4 - Read Doc on Flutter Website
+
+
