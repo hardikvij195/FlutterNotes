@@ -1,0 +1,10 @@
+Xcode Buildtime Error: 'Unable to load contents of file list: '…/Info.plist'
+
+
+1.	Open terminal under project folder
+2.	pod deintegrate
+3.	sudo gem install cocoapods-clean
+4.	pod clean
+5.	Open the project and delete (if it's still there) the “Pods” folder that should be red
+6.	pod setup (This may take some time)
+7.	pod install

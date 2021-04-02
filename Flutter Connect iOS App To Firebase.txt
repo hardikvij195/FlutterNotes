@@ -1,0 +1,15 @@
+Flutter Connect iOS App To Firebase
+
+1 - Add App. -> iOS
+2 - open Runner.xcworkspace in Xcode
+3 - Get Bundle Identifier
+4 - Download Info.plist file
+
+Your Choice ->
+5 - Go To gitIgnore and add ->
+
+*GoogleService-Info.plist
+
+6 - Open Xcode and drag file under Runner->Runner Folder & Click Finish
+7 -  Open pubspec.yaml & add dependencies 
+8 - Build App —— Connected

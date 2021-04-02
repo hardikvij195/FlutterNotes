@@ -1,0 +1,17 @@
+Add Firebase To Android App
+
+1 - Go to firebase -> Console
+2 - Create / Open Project
+3 - Add Andorid App
+4 - Get Package Name -> android -> app -> src -> main -> AndroidManifest -> get package name
+5 - To Get SHA1 Key ->
+
+open android project in android studio
+right side click gradle
+android -> Task -> Android -> Signing Report - double click
+
+get sha1 key
+
+6 - download goog-services.json
+7 - paste it in android-> app folder
+8 - then follow steps and copy dependencies

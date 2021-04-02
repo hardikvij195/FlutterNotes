@@ -1,0 +1,20 @@
+Flutter iOS Firebase Setup
+
+ios -> Runner.xproj 
+
+Open this in xcode
+
+Runner -> Get All Info
+
+Add ios App
+
+- give bundle name
+- NickName
+- download GoogleServices-info.plist
+- paste it in --> ios folder
+- go to xcode and drag and drop this file below the Runner
+-- some has placed it inside Runner -> Runner -> here ----
+- Close the xcode
+- click next and next and continue to console
+
+

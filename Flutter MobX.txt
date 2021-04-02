@@ -1,0 +1,157 @@
+
+MobX -->
+
+1 - Observable
+2 - Action
+3 - Reaction
+
+
+1 - Dependencies ->
+
+  cupertino_icons: ^1.0.1
+  mobx:
+  flutter_mobx:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner:
+  mobx_codegen:
+
+
+2 - Make Design Of App
+
+3 - Make store folder in lib
+
+4 - Make counter folder in lib
+
+5 - Make Counter.dart file & import mobx/mobx.dart 
+
+6 - Write ->>
+
+
+import 'package:mobx/mobx.dart';
+
+abstract class _Counter with Store {
+  @observable
+  int count = 0;
+
+  @action
+  void increment() {
+    count++;
+  }
+
+  @action
+  void decrement() {
+    count--;
+  }
+}
+
+
+
+
+ ——— Flutter MobX counter App
+
+1 - Add 2 dependencies ->
+
+  mobx :
+  flutter_mobx:
+
+2 - Add theses in dev_dependencies ->
+
+  mobx_codegen:
+  build_runner:
+
+3 - Type 1 -> Simply writing everything ->>
+
+
+Create new class & Write
+
+// class Counter {
+//   Observable counter = Observable(0);
+
+//   Action increment, decrement;
+
+//   Counter() {
+//     increment = Action(() {
+//       counter.value++;
+//     });
+//     decrement = Action(() {
+//       counter.value--;
+//     });
+//   }
+// }
+
+In main.dart Write -> 
+
+Observer(
+              builder: (context) {
+                return Text(
+                  ‘${_counter.counter.value}’,
+                  style: Theme.of(context).textTheme.headline4,
+                );
+              },
+            ),
+
+Counter _counter = Counter();
+
+For Text ->  _counter.counter.value 
+
+For button -> _counter.increment.call()
+
+
+
+————>>>
+
+Main Type —> The Better Way by generating Code 
+
+
+New Class ->
+
+import 'package:mobx/mobx.dart';
+part 'counter.g.dart';
+
+class CounterStore = Counter with _$CounterStore;
+
+abstract class Counter with Store {
+  @observable
+  int counter = 0;
+
+  @action
+  void increment() {
+    counter++;
+  }
+}
+
+Then Run Command to generate code -> 
+
+flutter packages pub run build_runner build
+
+Code will be generated ———
+
+
+Then in Main.dart —>
+
+
+CounterStore _counter = CounterStore();
+
+
+
+
+Observer(
+              builder: (context) {
+                return Text(
+                  '${_counter.counter}',
+                  style: Theme.of(context).textTheme.headline4,
+                );
+              },
+            ),
+
+
+
+onPressed: () {
+          _counter.increment();
+        }, 
+
+

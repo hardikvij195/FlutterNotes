@@ -1,0 +1,10 @@
+Flutter Check if andorid/iOS App or Website
+
+1 -- import 'package:flutter/foundation.dart' show kIsWeb;
+
+2 -- child: kIsWeb ? Home() : MobileMainPage()),
+
+
+
+
+

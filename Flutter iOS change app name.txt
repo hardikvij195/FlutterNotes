@@ -1,0 +1,6 @@
+Flutter iOS change app name
+
+in ios -> Runner -> info.plist 
+
+key - CFBundleName
+change string -> App Name 

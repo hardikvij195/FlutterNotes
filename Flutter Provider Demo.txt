@@ -1,0 +1,81 @@
+Flutter Provider Demo
+
+
+1 - add provider package
+2 - create design
+3 - models -> note model , note operation 
+
+4 - create note models
+
+5 - note operation ->
+
+	class NoteOperation extends ChangeNotifier{
+	
+	
+		List<Note> _notes = new List<Note>();
+		List<Note> get getNotes{
+			return _notes ;
+		}
+		
+		
+		void addNewNote(String title , String desc){
+			
+			Note nt = Note(title, desc);
+			_notes.add(nt);
+			notifyListener();
+			
+		
+		}
+	
+	
+	
+	}
+	
+6 - Main.dart ->
+
+
+
+
+		build()
+		return ChangeNotifierProvider<NoteOperation>(
+			create: (context) => NoteOperation(),
+			child: MaterialApp -------
+		)
+	
+	
+	
+	
+	------ Means all the screens inside material app can access all the data
+	
+	
+	
+7 - homescreen.dart ->
+
+	body : Consumer<NoteOperation>(
+		builder:( context, NoteOperation data , child){
+		
+			return listview.buillder ----
+			
+			itemCount -> data.getNotes.length 
+			
+			notecard -> data.getNotes[index]
+			
+			
+			
+		}
+	
+	)
+
+
+8 ->  
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
