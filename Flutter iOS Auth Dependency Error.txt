@@ -1,0 +1,9 @@
+Flutter Firebase Auth & Core Dependency Error ->
+
+
+Run command to install latest cocapods dependencies ->
+
+sudo arch -x86_64 gem install ffi
+arch -x86_64 pod install --repo-update
+
+
