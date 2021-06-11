@@ -1,0 +1,5 @@
+1 - go to flutter
+2 - cd android
+3 - sudo ./gradlew
+4 - sudo ./gradlew build
+5 - sudo ./gradlew siginingReport
