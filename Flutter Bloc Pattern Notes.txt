@@ -1,0 +1,86 @@
+Bloc Pattern ->
+
+1 - Add Dependency - flutter_bloc:
+1 - Create Model
+2 - Create Events
+3 - Create Bloc
+5 - Add Flutter Bloc Delegate Line Befor runApp to handle errors ->
+
+void main() {
+  BlocSupervisor.delegate = FoodBlocDelegate();
+  runApp(MaterialApp(home: MyApp()));
+}
+
+
+6 - Wrap all in BlocProvider Widget 
+
+  return BlocProvider<FoodBloc>(
+      create: (context) => FoodBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          secondaryHeaderColor: Colors.red,
+        ),
+        home: MainPage(),
+      ),
+    );
+
+7 - Use BlocConsumer where necessary ->
+
+
+class FoodList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+        padding: EdgeInsets.all(16),
+        child: BlocConsumer<FoodBloc, List<Food>>(
+          buildWhen: (List<Food> previous, List<Food> current) {
+            return true;
+          },
+          listenWhen: (List<Food> previous, List<Food> current) {
+            if (current.length > previous.length) {
+              return true;
+            }
+            return false;
+          },
+          builder: (context, foodList) {
+            return ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              padding: EdgeInsets.all(16),
+              itemCount: foodList.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: ListTile(
+                    title: Text(foodList[index].name),
+                    onTap: () => BlocProvider.of<FoodBloc>(context).add(
+                      FoodEvent.delete(index),
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+          listener: (BuildContext context, foodList) {
+            Scaffold.of(context).showSnackBar(
+              SnackBar(content: Text('Added!')),
+            );
+          },
+        ));
+  }
+}
+
+
+8 - Functions --- buildWhen , listenWhen , listener
+
+
+
+
+
+
+
+
+
+
+	

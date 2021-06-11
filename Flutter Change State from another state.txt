@@ -1,0 +1,43 @@
+Flutter Change State from another state ---
+
+
+1 - import dart:async 
+2 - 
+
+StreamController<int> streamCont = StreamController<int>();
+
+3 - 
+
+In stateful widgets --
+
+final Stream<int> stream ;
+
+this.stream -- in stful 
+
+4 - pass - streamCont.stream
+
+5 - 
+
+string menu = ""
+
+widget.stream.listen((index){
+
+
+	mysetState(index);
+})
+
+
+
+void mysetState(int index){
+
+List menu =[]
+
+setState((){
+
+});
+
+}
+
+
+
+streamCont.add(index);

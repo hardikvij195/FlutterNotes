@@ -1,0 +1,35 @@
+
+      
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\USERNAME\.android\debug.keystore" | "D:\Downloads\openssl-0.9.8k_X64\bin\openssl" sha1 -binary | "D:\Downloads\openssl-0.9.8k_X64\bin\openssl" base64
+      
+D:\Downloads\openssl-0.9.8k_X64
+
+
+C:\Program Files\Android\Android Studio\jre\bin\
+
+053831a02ea01be4503d7da7869e0b57
+App Id - 742024653069907
+
+
+
+6E:17:6D:EA:BB:9F:43:1A:08:9D:3F:F4:B3:D9:F7:80:39:95:37:EA
+
+
+
+6E176DEABB9F431A089D3FF4B3D9F780399537EA
+
+
+bhdt6rufQxoInT/0s9n3gDmVN+o=
+
+
+
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | "D:\Downloads\openssl-0.9.8k_X64\bin\openssl" sha1 -binary | "D:\Downloads\openssl-0.9.8k_X64\bin\openssl" base64
+
+
+mrgPgKeg1llIttpSjcws=
+
+
+mrgPgKeg1llIttpSjcws=
+
+
++J+3yf/mrgPgKeg1llIttpSjcws=

@@ -1,0 +1,21 @@
+FCM - 
+
+Video 1 -> create cloud functions in firebase
+
+firebase init function
+
+
+
+Video 2 -> listen to firebase database changes
+
+firebase messaging:
+
+inside activity tag ->
+
+  <intent-filter>
+      <action android:name="FLUTTER_NOTIFICATION_CLICK" />
+      <category android:name="android.intent.category.DEFAULT" />
+  </intent-filter>
+
+
+Video 3 -> Add Notifications -> Local Notifications
