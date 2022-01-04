@@ -1,5 +1,0 @@
-
-flutter config --enable-web
-
-flutter config --no-enable-web
-

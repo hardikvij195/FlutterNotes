@@ -1,0 +1,4 @@
+1 - Add Firebase to app
+2 - write code to get fem token from firebase messaging
+3 = for android => 1 - update manifest, 
+
