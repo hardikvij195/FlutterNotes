@@ -8,3 +8,11 @@ pass - simplistqpro1
 4 - Read Doc on Flutter Website
 
 
+===========================================
+
+
+1 - make new flutter project
+2 - upgrade project to 7.1
+3 - use java sdk 11
+4 - make android -> key.properties
+ 
