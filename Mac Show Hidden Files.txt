@@ -1,0 +1,3 @@
+Mac Show Hidden Files ->
+
+cmd + shift + .
