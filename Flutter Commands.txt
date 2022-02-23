@@ -1,0 +1,15 @@
+
+
+Flutter Enable Everything ->
+
+fvm global stable
+
+
+flutter config --enable-windows-desktop
+flutter config --enable-macos-desktop
+flutter config --enable-linux-desktop
+
+
+fvm flutter config --enable-windows-desktop
+fvm flutter config --enable-macos-desktop
+fvm flutter config --enable-linux-desktop

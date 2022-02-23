@@ -1,0 +1,16 @@
+1 - Open android studio and select flutter project
+2 - select android and ios
+3 - change project sdk to 11 for java everywhere
+4 - min sdk - 23 , compile and target sdk - 31
+5 - use java 11 everywhere
+
+6 - android gradle plugin version - 7.1.1
+	android gradle version - 7.2
+
+7 - compiled sdk version - 31
+	target sdk version - 31
+	min sdk - 23
+ 
+
+
+
