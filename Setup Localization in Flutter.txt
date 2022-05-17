@@ -1,0 +1,20 @@
+Setup Localization in Flutter
+
+1 - https://docs.flutter.dev/development/accessibility-and-localization/internationalization
+
+2 - Add this dependency
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0 # Add this line
+	
+	
+	
+3 - Follow The Steps on Website
+
+# The following section is specific to Flutter.
+flutter:
+  generate: true # Add this lin
