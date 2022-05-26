@@ -1,0 +1,13 @@
+Backup Cloud Firestore =>
+
+Search => Schedule Data Exports
+
+1 - Create a Standard Multi-Region Bucket on GCP
+2 - write 2 commands in cloud shell to give permissions
+3 - write cloud functions to Backup every 24 hours and deploy 
+
+To Write In Google Cloud Shell ->
+
+gcloud firestore import gs://bucket_name/folder name
+
+gcloud firestore import gs://expenserrr_backups/2022-05-26T11:32:01_21277/
