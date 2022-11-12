@@ -1,0 +1,9 @@
+Flutter MultiLanguage Support
+
+
+1 - easy_localization: ^3.0.1
+
+2 - add assets json file 
+3 - import json in pubspec 
+
+

@@ -1,0 +1,8 @@
+Send Email With Firebase CF Trigger When new user joins 
+
+1 - npm install nodemailer cors
+
+hvtechnologies19@gmail.com
+Iamhv@007@007 Pass
+
+

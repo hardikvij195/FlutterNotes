@@ -1,0 +1,56 @@
+Connect Firebase Crashlytics -> Android / iOS -> Flutter 
+
+Don't Upload ANY dYSM File as it is automatically done when an error comes
+just follow these steps and check on with throw Exception on ios simulator 
+
+
+firebase login
+
+dart pub global activate flutterfire_cli
+
+flutterfire configure
+
+flutter pub add firebase_core
+
+flutterfire configure
+
+await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+
+
+If ->  This error comes -> 
+
+Warning: Pub installs executables into ~/.pub-cache/bin, which is not on your path.
+You can fix that by adding this to your shell's config file (.bashrc, .bash_profile, etc.):
+
+  export PATH="$PATH":"~/.pub-cache/bin"
+  
+Then just copy paste this line in same vscode terminal 
+  export PATH="$PATH":"~/.pub-cache/bin"
+ 
+
+
+flutter pub add firebase_crashlytics
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+
+	await Firebase.initializeApp(
+	options: DefaultFirebaseOptions.currentPlatform,
+	);
+
+ 
+  // Pass all uncaught errors from the framework to Crashlytics.
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+
+  runApp(MyApp());
+}
+
+
+TextButton(
+    onPressed: () => throw Exception(),
+    child: const Text("Throw Test Exception"),
+),
